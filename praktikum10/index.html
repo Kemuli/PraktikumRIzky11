@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container{
+            display: flex;
+            justify-content: center;
+            margin: auto;
+            width: 500px;
+           
+        }
+
+        .box{ background-color: #2D033B;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            margin: auto;
+            width: 500px;
+            height: 500px;
+            border: 5px groove;
+            
+            
+            
+            
+        }
+
+        body{
+
+            background-color: black;
+            
+           display: block;
+           text-align: center;
+
+            
+        }
+
+        .custom-select{ 
+            position: relative;
+            font-family: Arial, Helvetica, sans-serif;
+        
+
+        }
+
+        .custom select{
+            display: none;
+
+        }
+
+        .select-selected{
+
+        }
+    </style>
+
+    <script>
+        function image_picker(){
+            let pilihan = document.getElementById("select").value;
+            const list_image = ["kucing.png","harit.png","rubah.png","serigala.png","enid.png"];
+            if(pilihan == "kucing"){
+                let select = list_image[0];
+                document.getElementById("image").src = `images/${select}`
+
+            }
+            
+            if(pilihan == "harit"){
+                let select = list_image[1];
+                document.getElementById("image").src = `images/${select}`
+            }   
+            
+            if(pilihan == "rubah"){
+                let select = list_image[2];
+                document.getElementById("image").src = `images/${select}`
+            }
+
+            if(pilihan == "serigala"){
+                let select = list_image[3];
+                document.getElementById("image").src = `images/${select}`
+            }
+            
+            if(pilihan == "enid"){
+                let select = list_image[4];
+                document.getElementById("image").src = `images/${select}`
+            }
+        }
+    </script>
+
+    
+</head>
+<body>
+    <div class="custom-select">
+     <select name="" id="select" onchange="image_picker()">
+        <option value="">pilih gambar</option>
+        <option value="kucing"> Kucing </option>
+        <option value="harit"> harit </option>
+        <option value="rubah"> Rubah </option>
+        <option value="serigala">serigala</option>
+        <option value="enid"> enid </option>
+     </select>
+    </div>
+     <br>
+     <div class="container">
+        <div class="box">
+            <img id="image">
+        </div>
+     </div>
+</body>
+</html>
